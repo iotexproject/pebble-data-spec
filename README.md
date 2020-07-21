@@ -3,17 +3,17 @@
 
 # Contents
 
-[1. Introduction](#introduction)
+[1. Introduction](#1-introduction)
 
-[1.1 Definition](#definition)
+[1.1 Definition](#11-definition)
 
-[1.2 Example](#example)
+[1.2 Example](#12-example)
 
-[2. Pebble JSON Object](#pebble-json-object)
+[2. Pebble JSON Object](#2-pebble-json-object)
 
-[2.1 Sensor Data Object](#sensor-data-object)
+[2.1 Sensor Data Object](#21-sensor-data-object)
 
-[2.2 Digital Signature Data Object](#digital-signature-data-object)
+[2.2 Digital Signature Data Object](#22-digital-signature-data-object)
 
 # 1. Introduction
 
