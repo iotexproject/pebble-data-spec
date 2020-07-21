@@ -3,17 +3,17 @@
 
 # Contents
 
-[1. Introduction](#_Toc46150598)
+[1. Introduction](#introduction)
 
-[1.1 Definition](#_Toc46150599)
+[1.1 Definition](#definition)
 
-[1.2 Example](#_Toc46150600)
+[1.2 Example](#example)
 
-[2. Pebble JSON Object](#_Toc46150601)
+[2. Pebble JSON Object](#pebble-json-object)
 
-[2.1 Sensor Data Object](#_Toc46150602)
+[2.1 Sensor Data Object](#sensor-data-object)
 
-[2.2 Digital Signature Data Object](#_Toc46150603)
+[2.2 Digital Signature Data Object](#digital-signature-data-object)
 
 # 1. Introduction
 
