@@ -1,43 +1,37 @@
-# pebble-spec
-Specifications of Pebble
 
+# Specification of Pebble Data Format
 
-**PebbleJson**  **格式介绍**
+# Contents
 
-# 目录
+[1. Introduction](#_Toc46150598)
 
-[1. 简介 1](#_Toc46150598)
+[1.1 Definition](#_Toc46150599)
 
-[1.1 定义 1](#_Toc46150599)
+[1.2 Example](#_Toc46150600)
 
-[1.2 例子 2](#_Toc46150600)
+[2. Pebble JSON Object](#_Toc46150601)
 
-[2. PebbleJson Object 2](#_Toc46150601)
+[2.1 Sensor Data Object](#_Toc46150602)
 
-[2.1 Sensor数据对象 2](#_Toc46150602)
+[2.2 Digital Signature Data Object](#_Toc46150603)
 
-[2.2 签名数据对象 3](#_Toc46150603)
+# 1. Introduction
 
-1.
-# 简介
+JavaScript Object Notation (JSON) is utilized to represent the sensor data collected by a Pebble tracker as well as the corresponding ECDSA digital signature. The data type includes *Number*, *String* and *Array*.   
 
-PebbleJson 使用JavaScript Object Notation (JSON)格式编码Pebble设备的传感器数据，以及传感器数据的数字签名。PebbleJson中包含传感器数据和对传感器数据的ECDSA数字签名，数据类型包括: Number、String、Array。
+## 1.1 Definition
 
-  1.
-## 定义
+The data types used in the Pebble data format are defined as follows:  
 
-PebbleJson中使用的数据类型定义:
+| Data Type | Data Size | Data Range |
+| ----------| --------- | ---------- |
+| Array     | 16-bit    | -32768 ~ +32768 |
+| Number    | 64-bit    | -1.79E+308 ~ +1.79E+308|
+| String    | null-terminated string | 
 
-●Array类型数据, 位宽16bit, 数值范围 -32768 ~ +32768
+## 1.2 Example
 
-●Number类型数据, 位宽 64bit, 数值范围 -1.79E+308 ~ +1.79E+308
-
-●String类型数据，null-terminated string
-
-  1.
-## 例子
-
-PebbleJson数据实例
+An example of the Pebble data format is shown below:
 
 {
 
@@ -69,37 +63,31 @@ PebbleJson数据实例
 
 }
 
-1.
-# PebbleJson Object
+# 2. Pebble JSON Object
 
-PebbleJson Object包含Sensor数据object和签名数据object
+Pebble JSON Object consists of sensor data object and digital signature data object.
 
-  1.
-## Sensor数据对象
+## 2.1 Sensor Data Object
 
-● message ：sub Object保存sensor数据
+The sensor data object includes the following sensor data collected by a Pebble tracker.
 
-● SNR： Number类型数据，指示NBIOT的信噪比
+| Sensor Data | Data Type | Description |
+| ----------- | --------- | ----------- |
+| SNR             | Number  | Signal-to-noise ratio of NB-IoT/LET-M|
+| VBAT            | Number  | Votage of battery|
+| gas\_resistance | Number  | Air quality |
+| temperature     | Number  | Environmental temperature |
+| pressure        | Number  | Air pressure |
+| humidity        | Number  | Environmental humidity |
+| gyroscope       | Array   | Angular velocity around the X-axis, Y-axis and Z-axis |
+| accelerometer   | Array   | Acceleration along the X-axis, Y-axis and Z-axis |
+| timestamp       | String  | Timestamp of sensor data sampling |
 
-●VBAT： Number 类型浮点数据, 指示电池电压
+## 2.2 Digital Signature Object
 
-●gas\_resistance： Number 类型数据，指示空气质量
+The Pebble tracker utilizes ECDSA over the elliptic curve sepc256r1 to sign the collected sensor data (i.e., the &quot;message&quot sub-object in the Pebble data format) and the digital signature data object contains the following signature data. 
 
-●temperature： Number 类型数据，指示环境温度
-
-●pressure： Number类型数据，指示大气压
-
-●humidity： Number类型数据，指示环境温度
-
-●gyroscope： Array类型数据，3 个数据分别表示陀螺仪的X，Y和Z轴角速率
-
-●accelerometer: Array 类型数据，3 个数据分别表示陀螺仪的X，Y和Z轴加速度
-
-●timestamp：String 类型数据，记录对sensot采样的时间
-
-  1.
-## 签名数据对象
-
-●signature\_r： ECDSA secp256r1 算法对 &quot;message&quot; 字段做的数字签名 r 值
-
-●signature\_s： ECDSA secp256r1 算法对 &quot;message&quot; 字段做的数字签名 s 值
+| Digital Signature | Data Type | Description |
+| ----------------- | --------- | ----------- |
+| r                 | Number    | r value of an ECDSA signature |
+| s                 | Number    | s value of an ECDSA signature |
