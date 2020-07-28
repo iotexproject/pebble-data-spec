@@ -37,29 +37,31 @@ An example of the Pebble data format is shown below:
 
 &quot;message&quot;: {
 
-&quot;SNR&quot;: 3,
+&quot;SNR&quot;: 2,
 
-&quot;VBAT&quot;: 0.14076246321201324,
+&quot;VBAT&quot;: 4.0750732421875,
+
+&quot;latitude&quot;: 3050.69225,
+
+&quot;longitude&quot;: 11448.65815,
 
 &quot;gas\_resistance&quot;: 1166811,
 
-&quot;temperature&quot;: 33.33333206176758,
+&quot;temperature&quot;: 36.23188400268555,
 
-&quot;pressure&quot;: 996.3800048828125,
+&quot;pressure&quot;: 1003.82000732421885,
 
-&quot;humidity&quot;: 78.01000213623047,
+&quot;humidity&quot;: 55.755001068115234,
 
-&quot;gyroscope&quot;: [-18, -3, 18],
+&quot;gyroscope&quot;: [-12, 11, 14],
 
-&quot;accelerometer&quot;: [166, 132, 8395],
+&quot;accelerometer&quot;: [-711, -231, 8260],
 
-&quot;timestamp&quot;: &quot;1630575085&quot;
+&quot;timestamp&quot;: &quot;3443547577&quot;
 
 },
 
-&quot;signature\_r&quot;: &quot;1EE739A0297D3D85&quot;,
-
-&quot;signature\_s&quot;: &quot;2771F48356B03101DE25FB2511485C0E8EC118020908DC727EF8C34A461818E4&quot;
+&quot;signature&quot;: &quot;D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222&quot;,
 
 }
 
@@ -75,6 +77,8 @@ The sensor data object includes the following sensor data collected by a Pebble 
 | ----------- | --------- | ----------- |
 | SNR             | Number  | Signal-to-noise ratio of NB-IoT/LET-M|
 | VBAT            | Number  | Votage of battery|
+| latitude        | Number  | gps latitude|
+| longitude       | Number  | gps longitude|
 | gas\_resistance | Number  | Air quality |
 | temperature     | Number  | Environmental temperature |
 | pressure        | Number  | Air pressure |
@@ -89,5 +93,4 @@ The Pebble tracker utilizes ECDSA over the elliptic curve sepc256r1 to sign the 
 
 | Digital Signature | Data Type | Description |
 | ----------------- | --------- | ----------- |
-| r                 | Number    | r value of an ECDSA signature |
-| s                 | Number    | s value of an ECDSA signature |
+| signature         | Number    | (r,s) value of an ECDSA signature |
