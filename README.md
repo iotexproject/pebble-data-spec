@@ -61,8 +61,10 @@ An example of the Pebble data format is shown below:
 
 },
 
-&quot;signature&quot;: &quot;D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222&quot;,
-
+&quot;signature&quot;:  {
+&quot;r&quot;: &quot;D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174&quot;,
+&quot;s&quot;: &quot;643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222&quot;
+}
 }
 
 # 2. Pebble JSON Object
@@ -93,4 +95,5 @@ The Pebble tracker utilizes ECDSA over the elliptic curve sepc256r1 to sign the 
 
 | Digital Signature | Data Type | Description |
 | ----------------- | --------- | ----------- |
-| signature         | Number    | (r,s) value of an ECDSA signature |
+| r                 | Number    | r value of an ECDSA signature |
+| s                 | Number    | s value of an ECDSA signature |
