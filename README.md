@@ -32,44 +32,28 @@ The data types used in the Pebble data format are defined as follows:
 ## 1.2 Example
 
 An example of the Pebble data format is shown below:
-
+```
 {
+	message: {
+		SNR: 2,
+		VBAT: 4.0750732421875,
+		latitude: 3050.69225,
+		longitude: 11448.65815,
+		gas\_resistance: 1166811,
+		temperature: 36.23188400268555,
+		pressure: 1003.82000732421885,
+		humidity: 55.755001068115234,
+		gyroscope: [-12, 11, 14],
+		accelerometer: [-711, -231, 8260],
+		timestamp: 3443547577
+	},
 
-&quot;message&quot;: {
-
-&quot;SNR&quot;: 2,
-
-&quot;VBAT&quot;: 4.0750732421875,
-
-&quot;latitude&quot;: 3050.69225,
-
-&quot;longitude&quot;: 11448.65815,
-
-&quot;gas\_resistance&quot;: 1166811,
-
-&quot;temperature&quot;: 36.23188400268555,
-
-&quot;pressure&quot;: 1003.82000732421885,
-
-&quot;humidity&quot;: 55.755001068115234,
-
-&quot;gyroscope&quot;: [-12, 11, 14],
-
-&quot;accelerometer&quot;: [-711, -231, 8260],
-
-&quot;timestamp&quot;: &quot;3443547577&quot;
-
-},
-
-&quot;signature&quot;:  {
-
-&quot;r&quot;: &quot;D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174&quot;,
-
-&quot;s&quot;: &quot;643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222&quot;
-
+	signature:  {
+		r: D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174,
+		s: 643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222
+	}
 }
-}
-
+```
 # 2. Pebble JSON Object
 
 Pebble JSON Object consists of sensor data object and digital signature data object.
