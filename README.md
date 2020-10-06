@@ -15,6 +15,9 @@
 
 [2.2 Digital Signature Data Object](#22-digital-signature-data-object)
 
+[2.3 Configure Object](#23-Configure-Object)
+
+
 # 1. Introduction
 
 JavaScript Object Notation (JSON) is utilized to represent the sensor data collected by a Pebble tracker as well as the corresponding ECDSA digital signature. The data type includes *Number*, *String* and *Array*.   
