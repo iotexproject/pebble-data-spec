@@ -54,9 +54,19 @@ An example of the Pebble data format is shown below:
 	}
 }
 ```
+An example of the Pebble configure format is shown below:
+```
+{
+  "bulk_upload": “1”,
+  "data_channel": “8183”,
+  "upload_period": “10”,
+  "bulk_upload_sampling_cnt": “60”,
+  "bulk_upload_sampling_freq": “10”
+}
+```
 # 2. Pebble JSON Object
 
-Pebble JSON Object consists of sensor data object and digital signature data object.
+Pebble JSON Object consists of sensor data object,digital signature data object and configure object.
 
 ## 2.1 Sensor Data Object
 
@@ -84,3 +94,33 @@ The Pebble tracker utilizes ECDSA over the elliptic curve sepc256r1 to sign the 
 | ----------------- | --------- | ----------- |
 | r                 | Number    | r value of an ECDSA signature |
 | s                 | Number    | s value of an ECDSA signature |
+
+## 2.3 Configure Object
+
+| Configuration Item | Data Type | Description |
+| -------------------------  | --------- | ----------- |
+| bulk_upload                | String    |  pebble json object is bulk upload or periodic upload(1: bulk upload, 0: periodic upload) |
+| data_channel               | String    |  Data channel mask (default: 0x1FF7=8183)|
+| upload_period              | String    |  Upload period during periodic upload (unit: second) |
+| bulk_upload_sampling_cnt   | String    |  Bulk uploading number of samples (bulk upload starts after the number of sample points is reached) |
+| bulk_upload_sampling_freq  | String    |  Bulk upload cycle (unit: second) |
+
+"data_channel" is one or more of the following combinations:
+
+| Sensor Channel               | Mask      |  
+| ---------------------------- | --------- |
+| DATA_CHANNEL_GPS             | 0x1       |
+| DATA_CHANNEL_SNR             | 0x2       | 
+| DATA_CHANNEL_VBAT            | 0x4       |
+| DATA_CHANNEL_DEVINFO         | 0x6       | 
+| DATA_CHANNEL_GAS             | 0x10      |
+| DATA_CHANNEL_TEMP            | 0x20      | 
+| DATA_CHANNEL_PRESSURE        | 0x40      |
+| DATA_CHANNEL_HUMIDITY        | 0x80      |
+| DATA_CHANNEL_ENV_SENSOR      | 0xF0      |
+| DATA_CHANNEL_TEMP2           | 0x100     |
+| DATA_CHANNEL_GYROSCOPE       | 0x200     |
+| DATA_CHANNEL_ACCELEROMETER   | 0x400     |
+| DATA_CHANNEL_CUSTOM_MOTION   | 0x800     |
+| DATA_CHANNEL_ACTION_SENSOR   | 0xF00     |
+| DATA_CHANNEL_LIGHT_SENSOR    | 0x1000    |
