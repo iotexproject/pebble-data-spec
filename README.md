@@ -49,6 +49,7 @@ An example of the Pebble data format is shown below:
 		gyroscope: [-12, 11, 14],
 		accelerometer: [-711, -231, 8260],
 		timestamp: 3443547577
+		random: 80830BAB772F2E6F
 	},
 
 	signature:  {
@@ -88,6 +89,7 @@ The sensor data object includes the following sensor data collected by a Pebble 
 | gyroscope       | Array   | Angular velocity around the X-axis, Y-axis and Z-axis |
 | accelerometer   | Array   | Acceleration along the X-axis, Y-axis and Z-axis |
 | timestamp       | String  | Timestamp of sensor data sampling |
+| random          | String  | Random number (16 numbers) |
 
 ## 2.2 Digital Signature Object
 
