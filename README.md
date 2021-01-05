@@ -89,3 +89,7 @@ The Pebble tracker utilizes ECDSA over the elliptic curve sepc256r1 to sign the 
 | ----------------- | --------- | ----------- |
 | r                 | Number    | r value of an ECDSA signature |
 | s                 | Number    | s value of an ECDSA signature |
+
+
+# 3. [pebble-simulator](https://github.com/iotexproject/pebble-simulator)
+ A simulator for producing pebble data, write it to a local file and publish to AWS MQTT, interact with a local or remote iotex block chain node to get a MQTT endpoint and generate RSA key pair which used to decrypt the endpoint .
