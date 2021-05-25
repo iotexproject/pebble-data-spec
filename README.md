@@ -76,8 +76,8 @@ The sensor data object includes the following sensor data collected by a Pebble 
 
 | Sensor Data | Data Type | Description |
 | ----------- | --------- | ----------- |
-| SNR             | Number  | Signal-to-noise ratio of NB-IoT/LET-M|
-| VBAT            | Number  | Votage of battery|
+| snr             | Number  | Signal-to-noise ratio of NB-IoT/LET-M|
+| vbat            | Number  | Votage of battery|
 | latitude        | Number  | gps latitude|
 | longitude       | Number  | gps longitude|
 | gasResistance | Number  | Air quality |
