@@ -38,14 +38,14 @@ An example of the Pebble data format is shown below:
 ```
 {
 	message: {
-		SNR: 2,
-		VBAT: 4.0750732421875,
-		latitude: 3050.69225,
-		longitude:11448.65815,
-		gasResistance:1166811,
-		temperature:36.23188400268555,
-		pressure:1003.82000732421885,
-		humidity:55.755001068115234,
+		"snr": 2,
+		"vbat": 4.0750732421875,
+		"latitude": 3050.69225,
+		"longitude":11448.65815,
+		"gasResistance":1166811,
+		"temperature":36.23188400268555,
+		"pressure":1003.82000732421885,
+		"humidity":55.755001068115234,
 		"light": 0,
 		"temperature2": 28.42693328857422,
 		"gyroscope": [-12, 11, 14],
