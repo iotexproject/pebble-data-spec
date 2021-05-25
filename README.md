@@ -36,29 +36,35 @@ The data types used in the Pebble data format are defined as follows:
 
 An example of the Pebble data format is shown below:
 ```
-{
-	message: {
-		"snr": 2,
-		"vbat": 4.0750732421875,
-		"latitude": 3050.69225,
-		"longitude":11448.65815,
-		"gasResistance":1166811,
-		"temperature":36.23188400268555,
-		"pressure":1003.82000732421885,
-		"humidity":55.755001068115234,
-		"light": 0,
-		"temperature2": 28.42693328857422,
-		"gyroscope": [-12, 11, 14],
-		"accelerometer": [-711, -231, 8260],
-		"timestamp":"3443547577"
-		"random":"80830BAB772F2E6F"
-	},
-
-	"signature":  {
-		"r":"D7797968EAA3FFE5F8057C9D97F707A4A96CBFC250115FE6293EBA5E90327174",
-		"s":"643A8CB823110376A5D30201463CF69CDF8CBF1C050EB85B023CABFB589C3222"
-	}
-}
+  "message": {
+    "snr": 19,
+    "vbat": 4167,
+    "latitude": 20000,
+    "longitude": 20000,
+    "gasResistance": 7745665,
+    "temperature": 24.389999389648438,
+    "pressure": 1003,
+    "humidity": 67.24214935302734,
+    "light": 0,
+    "temperature2": 29.3176326751709,
+    "gyroscope": [
+      -2,
+      3,
+      1
+    ],
+    "accelerometer": [
+      -35,
+      110,
+      8226
+    ],
+    "timestamp": "1621943329",
+    "random": "E1915DBE2ACCC9F3",
+    "eccPubkey": "E1B955AEDF34D18921E3DC2133F2B785BA4C40DBC1502A8BF6ECE674B80E25D8822C4686723BBC3CB4A58D881DE053A1444EE1873E5916907D2F8819ECC7A1B6"
+  },
+  "signature": {
+    "r": "597E7BF0F5C85D7A84C3C409CA358DE3C27A072587C884AE0452BD93D8F72F39",
+    "s": "ACF44E758925A2454DB1880B31A3B1B11EEAE9BCEE67C423DADF8510B1A244CC"
+  }
 ```
 # 2. Pebble JSON Object
 
