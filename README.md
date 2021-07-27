@@ -89,6 +89,8 @@ The sensor data object includes the following sensor data collected by a Pebble 
 | accelerometer   | Array   | Acceleration along the X-axis, Y-axis and Z-axis |
 | timestamp       | String  | Timestamp of sensor data sampling |
 | random          | String  | Random number (16 numbers) |
+| longitude       | Number  | Degrees and Decimal Minutes(DDD° MM.MMM').(eg: 11448.65815,to convert from Decimal Minutes(D° M.M') to Decimal Degrees (D.D°),114°48.65815' = 114°+ （48.65815'/60）= 114.810969°)|
+| latitude        | Number  | Degrees and Decimal Minutes(DDD° MM.MMM').(eg: 3050.69225,to convert from Decimal Minutes (D° M.M') to Decimal Degrees (D.D°),30°50.69225' = 30°+ （50.69225'/60）= 30.844870°)|
 
 ## 2.2 Digital Signature Object
 
