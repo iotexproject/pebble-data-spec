@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+message SensorData
+{
+ optional uint32 snr = 1;
+ optional uint32 vbat = 2;
+ optional sint32 latitude = 3;
+ optional sint32 longitude = 4;
+ optional uint32 gasResistance = 5;
+ optional uint32 temperature = 6;
+ optional uint32 pressure = 7;
+ optional uint32 humidity = 8;
+ optional uint32 light = 9;
+ optional uint32 temperature2 = 10;
+ repeated sint32 gyroscope = 11;
+ repeated sint32 accelerometer = 12;
+ optional string random = 13;
+}
+
+message SensorConfig
+{
+    optional uint32 bulkUpload = 1;
+    optional uint32 dataChannel = 2;
+    optional uint32 uploadPeriod = 3;
+    optional uint32 bulkUploadSamplingCnt = 4;
+    optional uint32 bulkUploadSamplingFreq = 5;
+    optional uint32 beep = 6;
+    optional string firmware = 7;
+    optional bool deviceConfigurable = 8;
+}
+
+message SensorState
+{
+    optional uint32 state = 1;
+}
+
+message SensorConfirm {
+    optional string owner = 1;
+}
+
+message BinPackage
+{
+    enum PackageType {
+        DATA = 0;
+        CONFIG = 1;
+        STATE = 2;
+    }
+    required PackageType type = 1;
+    required bytes data = 2;
+    required uint32 timestamp = 3;
+    required bytes signature = 4;
+}
+
+message ConfirmPackage {
+    required bytes owner = 1;
+    required uint32 timestamp = 2;
+    required bytes signature = 3;
+    required uint32 channel = 4;
+}
