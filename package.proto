@@ -7,7 +7,7 @@ message SensorData
  optional sint32 latitude = 3;
  optional sint32 longitude = 4;
  optional uint32 gasResistance = 5;
- optional uint32 temperature = 6;
+ optional sint32 temperature = 6;
  optional uint32 pressure = 7;
  optional uint32 humidity = 8;
  optional uint32 light = 9;
