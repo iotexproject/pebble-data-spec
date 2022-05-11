@@ -15,7 +15,7 @@
 
 [2.2 Digital Signature Object](#22-digital-signature-object)
 
-[2.3 Protobuf encode](##2.3-Protobuf encode)
+[2.3 Protobuf encode](##23-Protobuf-encode)
 
 [3 pebble-simulator](#3-pebble-simulator)
 
